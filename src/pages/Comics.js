@@ -4,7 +4,6 @@ import SearchInput from '../components/SearchInput';
 import ButtonPrimary from '../components/ButtonPrimary';
 import ButtonSecondary from '../components/ButtonSecondary';
 import api from '../api';
-import './Comics.css';
 
 function Comics() {
   const [comics, setComics] = useState([]);
@@ -74,7 +73,7 @@ function Comics() {
       ) : (
         <>
           <div className="grid">
-            {comics.map((comic) => (
+            {comics.filter(c => c.thumbnail && c.title).map((comic) => (
               <Card
                 key={comic._id}
                 image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}

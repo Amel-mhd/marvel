@@ -5,7 +5,6 @@ import SearchInput from '../components/SearchInput';
 import ButtonPrimary from '../components/ButtonPrimary';
 import ButtonSecondary from '../components/ButtonSecondary';
 import api from '../api';
-import './Characters.css';
 
 function Characters() {
   const navigate = useNavigate();
@@ -76,7 +75,7 @@ function Characters() {
       ) : (
         <>
           <div className="grid">
-            {characters.map((character) => (
+            {characters.filter(c => c.thumbnail).map((character) => (
               <Card
                 key={character._id}
                 image={`${character.thumbnail.path}.${character.thumbnail.extension}`}

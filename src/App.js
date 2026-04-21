@@ -2,22 +2,20 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Characters from './pages/Characters';
-import Character from './pages/Character';
 import Comics from './pages/Comics';
 import Favorites from './pages/Favorites';
+import Character from './pages/Character';
 
 function App() {
   return (
     <Router>
-      <div style={{ backgroundColor: '#0a0a0a', minHeight: '100vh' }}>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Characters />} />
-          <Route path="/character/:id" element={<Character />} />
-          <Route path="/comics" element={<Comics />} />
-          <Route path="/favorites" element={<Favorites />} />
-        </Routes>
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Characters />} />
+        <Route path="/comics" element={<Comics />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/character/:id" element={<Character />} />
+      </Routes>
     </Router>
   );
 }

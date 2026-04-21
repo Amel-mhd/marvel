@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Card from '../components/Card';
-import './Favorites.css';
 
 function Favorites() {
   const [favorites, setFavorites] = useState(
@@ -17,7 +16,7 @@ function Favorites() {
     if (item.thumbnail?.path) {
       return `${item.thumbnail.path}.${item.thumbnail.extension}`;
     }
-    return item.thumbnail;
+    return null;
   };
 
   return (
@@ -28,9 +27,9 @@ function Favorites() {
       </p>
 
       {favorites.length === 0 ? (
-        <div className="favorites__empty">
-          <p className="favorites__empty-icon">❤️</p>
-          <p className="favorites__empty-text">Aucun favori pour l'instant</p>
+        <div className="empty">
+          <p className="empty__icon">❤️</p>
+          <p className="empty__text">Aucun favori pour l'instant</p>
         </div>
       ) : (
         <div className="grid">
