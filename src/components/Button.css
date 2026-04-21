@@ -1,0 +1,28 @@
+.btn {
+  padding: 10px 24px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  letter-spacing: 1px;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.btn--primary {
+  background-color: #E62429;
+  color: #fff;
+}
+
+.btn--secondary {
+  background-color: #333;
+  color: #fff;
+}
